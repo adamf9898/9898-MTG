@@ -1,0 +1,394 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <!-- prevent caching -->
+        <!--<meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" />-->
+
+        <title>Import Useful Generators ― Perchance</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="/favicon-32x32-white-bg.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16-white-bg.png" sizes="16x16">
+        
+        <meta property="og:title" content="Import Useful Generators" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://perchance.org/import-useful-generators" />
+        <meta property="og:image" content="https://perchance.org/api/getGeneratorScreenshot?generatorName=import-useful-generators" />
+        <meta property="og:description" content="" />
+
+        <link rel="preconnect" href="https://null.perchance.org">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <script>
+        // COMPATABILITY TESTING:
+        window.canExecuteModernJavascript = true;
+        try {
+
+          var str = "";
+          str += "\n(async () => { await new Promise(resolve => setTimeout(resolve, 500)); console.log('async/await is supported'); })();";
+          str += "\nlet arr = [1,2,3]; for(let a of arr) { arr[0]+=a; }; console.log('let a of arr supported');";
+          str += "\nvar m = [1,2,3].map(n => n+1);";
+          str += "\nvar k = [...[1,2,3]];";
+          str += "\nvar a = (function(a=3) { return a+1; })();";
+
+          window.eval(str);
+
+        } catch(e) {
+          window.canExecuteModernJavascript = false;
+          // var message = "<div style='overflow:hidden;height:0px;'><h1>Create a Random Generator</h1><p>Perhance is a platform that allows you to create your own custom random generators. You could use it to create your own random text generator for a tabletop RPG, or to make your own random name generator, or to simply create a generator which selects a random item from your list with different weights. You can also save your generator so it has a permalink that you can share with your friends.</p><p>Perchance is based around creating lists which reference other lists. You can adjust the odds of items in each list so that when you randomly select an item from that list, they all have the likelihoods that you've specified. If you'd like to learn how to make a random text generator with Perchance, you should check out the tutorial. It explains all the basic features of the Perchance engine and should get you up and running in only 10 or 20 minutes. Perchance has many powerful features that you don't need to learn from the start, but can learn later if you want to create particularly complex generators.</p><p>I created Perchance because most people are still creating random generators in excel. Those work all right, but excel and other spreadsheets aren't really made for that purpose, so there's a lot to be desired in terms of functionality and ease of use. Whatever you're using it for, I hope you find Perchance useful! You might like to check out our <a href='http://reddit.com/r/perchance'>community forum</a> where you can ask questions and share your random generator creations.</p></div>(」ﾟﾛﾟ)｣ Sorry! Perchance uses cutting edge browser features that are only available in the latest versions of Chrome and Firefox. All modern browsers will eventually be supported, but for now you'll need to use one of those two. Sorry again for the inconvenience!";
+          // //window.alert(message);
+          // document.body.innerHTML = message;
+        }
+        </script>
+
+
+        <div id="generator-description" style="height:20px; width:20px; z-index:-10; overflow:hidden; position:fixed; bottom:-100px;"><!-- will be filled with description after iframe execution --></div>
+
+        <style>
+          .cm-syntax-style1 { color: #f18c16; }
+          .cm-syntax-style2 { color: #2795EE; }
+          .cm-syntax-style3-comment { color: #A0A1A7; }
+        </style>
+
+        <!-- PRELOADED DATA -->
+        <script id="preloaded-generator-data" type="notjs">%7B%22name%22:%22import-useful-generators%22,%22modelText%22:%22//%20Note:%20Text%20that%20comes%20after%20%5C%22//%5C%22%20is%20ignored,%20which%20allows%5Cn//%20you%20to%20write%20notes%20-%20like%20the%20one%20you're%20reading%20now!%5Cngoto%20=%20%7Bimport:goto-plugin%7D%5Cnremember%20=%20%7Bimport:remember-plugin%7D%5Cnoutgen%20=%20%7Bimport:generators%7D%5Cntitle%5Cn%20%20Import%20Useful%20Generators%5Cn%5Cn%5Cn%5Cn%5Cnoutput%5Cn%20%20//import:%5Bgenerators%5D%20%5Cn%20%20//%3Cp%3Eimport:%5Bgenerators%5D%3Cp%3Eimport:%5Bgenerators%5D%3Cp%3Eimport:%5Bgenerators%5D%3Cp%3Eimport:%5Bgenerators%5D%3Cp%3Eimport:%5Bgenerators%5D%5Cn%20%20//%3Cp%3E%20%3Ccode%3E%20import:%5Bgenerators%5D%3C/code%3E%20//%7Bimport:generator%7D%20%5Cn%20%20//%5Bgenerators.selectOne%5D%5Cn%20%20%5Bgenerators.selectMany(numItems).joinItems(%5C%22%3Cbr%3E%3Cbr%3E%5C%22)%5D%20//%20change%20%20selectMany%20%20to%20%20selectUnique%20%20if%20you%20want%20them%20to%20be%20unique%5Cn%20%20%5Bif%20(output%20==%20undefined)%20%7Boutput%20=%20generators.selectMany(numItems).joinItems(%5C%22%3Cbr%3E%3Cbr%3E%5C%22)%7D%20else%20%7Bgenerators.selectUnique(numItems).joinItems(%5C%22%3Cbr%3E%3Cbr%3E%5C%22)%7D%5D%20%20%5Cn%5Cngenerators%5Cn%20%20language%5Cn%20%20noun%5Cn%20%20abstract-noun%5Cn%20%20concrete-noun%5Cn%20%20common-noun%5Cn%20%20sci-fi-noun%5Cn%20%20uncountable-noun%5Cn%20%20pronoun%5Cn%20%20adjective%5Cn%20%20comparative-adjective%5Cn%20%20superlative-adjective%5Cn%20%20food-adjective%5Cn%20%20adjective-of-relation%5Cn%20%20verb%5Cn%20%20speech-verb%5Cn%20%20adverb%5Cn%20%20time-adverb%5Cn%20%20manner-adverb%5Cn%20%20frequency-adverb%5Cn%20%20intensifier%5Cn%20%20interjection%5Cn%20%20common-word%5Cn%20%20preposition%5Cn%20%20emotion%5Cn%20%20greeting%5Cn%20%20goodbye%5Cn%20%20swear-word%5Cn%20%20personal-title%5Cn%20%20personal-suffix%5Cn%20%20prefix%5Cn%20%20exclamation%5Cn%20%20compound-word%5Cn%20%20cliche%5Cn%20%20simile%5Cn%20%20sentence%5Cn%20%20part-of-speech%5Cn%20%20rare-word%5Cn%20%20archaic-word%5Cn%20%20long-word%5Cn%20%203-letter-word%5Cn%20%20woo-word%5Cn%20%20grammatical-case%5Cn%20%20-ism%5Cn%20%20latin-word%5Cn%20%20philia%5Cn%20%20obsession%5Cn%20%20nonsense-word%5Cn%20%20complex-word%5Cn%20%20person-adjective%5Cn%20%20honorific%5Cn%20%20portmanteau%5Cn%20%20palindrome%5Cn%20%20life%20&%20nature%5Cn%20%20animal%5Cn%20%20endangered-animal%5Cn%20%20unusual-animal%5Cn%20%20land-animal%5Cn%20%20dog-breed%5Cn%20%20pet-animal%5Cn%20%20horse-breed%5Cn%20%20mammal-species%5Cn%20%20dinosaur%5Cn%20%20reptile-species%5Cn%20%20lizard-species%5Cn%20%20snake-species%5Cn%20%20turtle-species%5Cn%20%20turtle-tortoise-species%5Cn%20%20fish-species%5Cn%20%20sea-creature%5Cn%20%20flower-species%5Cn%20%20plant-species%5Cn%20%20tree-species%5Cn%20%20herb%5Cn%20%20spider-species%5Cn%20%20bug-species%5Cn%20%20beetle-species%5Cn%20%20bird-species%5Cn%20%20north-american-bird-species%5Cn%20%20antarctic-bird-species%5Cn%20%20scientific-species-name%5Cn%20%20organism%5Cn%20%20organelle%5Cn%20%20habitat%5Cn%20%20mushroom-species%5Cn%20%20body-part%5Cn%20%20horse-color%5Cn%20%20cat-breed%5Cn%20%20body-of-water%5Cn%20%20food%20&%20nutrition%5Cn%20%20food%5Cn%20%20vegetable%5Cn%20%20fruit%5Cn%20%20ingredient%5Cn%20%20vitamin%5Cn%20%20condiment%5Cn%20%20herb%5Cn%20%20spice%5Cn%20%20dessert%5Cn%20%20fast-food%5Cn%20%20candy-type%5Cn%20%20fast-food-chain%5Cn%20%20nonsense-recipe%5Cn%20%20food-company%5Cn%20%20biscuit-type%5Cn%20%20chocolate-brand%5Cn%20%20dinner%5Cn%20%20lunch%5Cn%20%20breakfast%5Cn%20%20biological-diet%5Cn%20%20drinks%20&%20liquids%5Cn%20%20beverage-type%5Cn%20%20liquid%5Cn%20%20coffee-type%5Cn%20%20cocktail%5Cn%20%20tea-variety%5Cn%20%20juice-type%5Cn%20%20beer%5Cn%20%20alcoholic-beverage%5Cn%20%20non-alcoholic-beverage%5Cn%20%20soda-drink%5Cn%20%20soda-brand%5Cn%20%20energy-drink%5Cn%20%20bodily-fluid%5Cn%20%20literature%5Cn%20%20book%5Cn%20%20stephen-king-book%5Cn%20%20james-patterson-book%5Cn%20%20book-character%5Cn%20%20author%5Cn%20%20famous-essay%5Cn%20%20fantasy-novel%5Cn%20%20fantasy-author%5Cn%20%20sci-fi-author%5Cn%20%20sci-fi-novel%5Cn%20%20art%5Cn%20%20type-of-art%5Cn%20%20color-palette%5Cn%20%20color%5Cn%20%20buildings,%20architecture%20&%20related%5Cn%20%20room-type%5Cn%20%20speech%5Cn%20%20rhetorical-device%5Cn%20%20syllable%5Cn%20%20speech-type%5Cn%20%20poetry%5Cn%20%20haiku%5Cn%20%20quotes%5Cn%20%20proverb%5Cn%20%20quote%5Cn%20%20characters%5Cn%20%20pokemon%5Cn%20%20pokemon-ability%5Cn%20%20simpsons-character%5Cn%20%20south-park-character%5Cn%20%20futurama-character%5Cn%20%20marvel-character%5Cn%20%20dc-comics-character%5Cn%20%20superhero%5Cn%20%20harry-potter-character%5Cn%20%20lotr-character%5Cn%20%20misc%5Cn%20%20fact%5Cn%20%20stationery-item%5Cn%20%20password%5Cn%20%20md5-hash%5Cn%20%20phobia%5Cn%20%20fabric-type%5Cn%20%20complex-form%5Cn%20%20object%5Cn%20%20knot-name%5Cn%20%20container-type%5Cn%20%20history%5Cn%20%20roman-ruler%5Cn%20%20roman-city%5Cn%20%20ancient-greek-city%5Cn%20%20battle%5Cn%20%20war-name%5Cn%20%20medieval-war%5Cn%20%20modern-war%5Cn%20%20historical-figure%5Cn%20%20politics%20&%20government%5Cn%20%20form-of-government%5Cn%20%20mass-surveillance-project-name%5Cn%20%20project-codename%5Cn%20%20uk-political-party%5Cn%20%20us-federal-agency%5Cn%20%20us-military-operation%5Cn%20%20terrorist-group%5Cn%20%20time,%20date%20&%20events%5Cn%20%20time-adverb%5Cn%20%20date%5Cn%20%20month%5Cn%20%20holiday%5Cn%20%20moon-phase%5Cn%20%20time-of-day%5Cn%20%20part-of-day%5Cn%20%20day-of-week%5Cn%20%20time-zone%5Cn%20%20religion%20&%20superstition%5Cn%20%20egyptian-god%5Cn%20%20greek-god%5Cn%20%20greek-titan%5Cn%20%20greek-monster%5Cn%20%20bible-verse%5Cn%20%20quran-verse%5Cn%20%20tarot-prediction%5Cn%20%20zodiac-sign%5Cn%20%20chinese-zodiac-sign%5Cn%20%20fortune-telling-technique%5Cn%20%20norse-deity%5Cn%20%20christian-saint%5Cn%20%20religion%5Cn%20%20symbols%20&%20unicode%5Cn%20%20wingding%5Cn%20%20emoji%5Cn%20%20bw-emoji%5Cn%20%20braille%5Cn%20%20ascii-face%5Cn%20%20ascii-symbol%5Cn%20%20color%5Cn%20%20color-palette%5Cn%20%20paint-color%5Cn%20%20css-color%5Cn%20%20hex-color%5Cn%20%20crayon-color%5Cn%20%20color-name%5Cn%20%20human%20life%5Cn%20%20hobby%5Cn%20%20life-goal%5Cn%20%20mood%5Cn%20%20education%20&%20career%5Cn%20%20occupation%5Cn%20%20university-course%5Cn%20%20people%5Cn%20%20person%5Cn%20%20rich-person%5Cn%20%20youtuber%5Cn%20%20us-president%5Cn%20%20us-vice-president%5Cn%20%20reality-tv-star%5Cn%20%20celebrity%5Cn%20%20vegan-celebrity%5Cn%20%20female-celebrity%5Cn%20%20male-celebrity%5Cn%20%20famous-ceo%5Cn%20%20famous-athlete%5Cn%20%20inventor%5Cn%20%20physicist%5Cn%20%20poet%5Cn%20%20pope%5Cn%20%20british-actor%5Cn%20%20famous-scientist%5Cn%20%20person-build%5Cn%20%20person-height%5Cn%20%20person-age%5Cn%20%20face-shape%5Cn%20%20companies%20&%20organisations%5Cn%20%20real-slogan%5Cn%20%20slogan%5Cn%20%20real-company%5Cn%20%20company-name%5Cn%20%20financial-company-name%5Cn%20%20cafe-name%5Cn%20%20startup-idea-generator%5Cn%20%20fortune-500-company%5Cn%20%20industry%5Cn%20%20nasdaq-corporation%5Cn%20%20us-newspaper%5Cn%20%20shop-or-service%5Cn%20%20animal-protection-group%5Cn%20%20names%5Cn%20%20common-first-name%5Cn%20%20common-last-name%5Cn%20%20norwegian-last-name%5Cn%20%20male-norwegian-name%5Cn%20%20female-norwegian-name%5Cn%20%20aesthetic-username%5Cn%20%20couple-name%5Cn%20%20chocobo-name%5Cn%20%20common-female-name%5Cn%20%20common-male-name%5Cn%20%20common-unisex-name%5Cn%20%20japanese-surname%5Cn%20%20feminine-name%5Cn%20%20masculine-name%5Cn%20%20surname%5Cn%20%20medicine%20&%20health%5Cn%20%20medical-diagnosis%5Cn%20%20fake-drug-name%5Cn%20%20drug-name%5Cn%20%20us-hospital%5Cn%20%20foreign%20language%5Cn%20%20language%5Cn%20%20european-language%5Cn%20%20african-language%5Cn%20%20asian-language%5Cn%20%20russian-word%5Cn%20%20french-word%5Cn%20%20japanese-word%5Cn%20%20images%20&%20sprites%5Cn%20%20pokemon-sprite%5Cn%20%20imgur-image%5Cn%20%20instagram-image%5Cn%20%20mario-sprite%5Cn%20%20favicon%5Cn%20%20academia%5Cn%20%20conference-name%5Cn%20%20academic-paper-title%5Cn%20%20scientific-field%5Cn%20%20biology-field%5Cn%20%20scientific-instrument%5Cn%20%20physics%5Cn%20%20planet-name%5Cn%20%20exoplanet-name%5Cn%20%20moon-name%5Cn%20%20physics-equation%5Cn%20%20quantum-particle%5Cn%20%20physics-field-of-study%5Cn%20%20mathematics%5Cn%20%20fibonacci-number%5Cn%20%20prime-number%5Cn%20%20trig-identity%5Cn%20%20unit-of-measurement%5Cn%20%20polygon-name%5Cn%20%20chemistry%5Cn%20%20chemistry-apparatus%5Cn%20%20metal%5Cn%20%20chemical-element%5Cn%20%20toxic-chemical%5Cn%20%20engineering%5Cn%20%20material%5Cn%20%20building-material%5Cn%20%20packaging-material%5Cn%20%20sculpting-material%5Cn%20%20patent%5Cn%20%20computers%20&%20technology%5Cn%20%20device%5Cn%20%20phone-brand%5Cn%20%20tech-company%5Cn%20%20appliance%5Cn%20%20programming-languge%5Cn%20%20mime-type%5Cn%20%20gtld%5Cn%20%20geography%5Cn%20%20geographic-location%5Cn%20%20us-geographic-location%5Cn%20%20lake-name%5Cn%20%20river-name%5Cn%20%20mountain-name%5Cn%20%20canyon-name%5Cn%20%20island-name%5Cn%20%20sea-name%5Cn%20%20valley-name%5Cn%20%20peninsula-name%5Cn%20%20creek-name%5Cn%20%20cave-name%5Cn%20%20bay-name%5Cn%20%20jungle-name%5Cn%20%20forest-name%5Cn%20%20national-park%5Cn%20%20world-heritage-site%5Cn%20%20earth%20&%20geology%5Cn%20%20type-of-rock%5Cn%20%20gemstone%5Cn%20%20terrain%5Cn%20%20society%20&%20the%20world%5Cn%20%20nationality%5Cn%20%20country%5Cn%20%20country-or-territory%5Cn%20%20european-union-member%5Cn%20%20african-country%5Cn%20%20european-country%5Cn%20%20asian-country%5Cn%20%20continent%5Cn%20%20city%5Cn%20%20us-city%5Cn%20%20roman-city%5Cn%20%20ancient-greek-city%5Cn%20%20japanese-city%5Cn%20%20german-town%5Cn%20%20us-state%5Cn%20%20capital-city%5Cn%20%20california-address%5Cn%20%20newyork-address%5Cn%20%20vacation-location%5Cn%20%20tribal-culture%5Cn%20%20gps-position%5Cn%20%20canadian-municipality%5Cn%20%20english-town-name%5Cn%20%20english-city-name%5Cn%20%20venue%5Cn%20%20us-hospital%5Cn%20%20space%20&%20space%20travel%5Cn%20%20planet%5Cn%20%20nearby-star%5Cn%20%20galaxy%5Cn%20%20asteroid%5Cn%20%20space-craft%5Cn%20%20transport%5Cn%20%20vehicle-type%5Cn%20%20airline%5Cn%20%20train-model%5Cn%20%20aeroplane-model%5Cn%20%20car-brand%5Cn%20%20car-model%5Cn%20%20bicyle-brand%5Cn%20%20mode-of-transport%5Cn%20%20truck-brand%5Cn%20%20truck-model%5Cn%20%20nautical-term%5Cn%20%20film%20&%20tv%5Cn%20%20movie%5Cn%20%20film-genre%5Cn%20%20anime-film%5Cn%20%20disney-film%5Cn%20%20marvel-film%5Cn%20%20pixar-film%5Cn%20%20anime-series%5Cn%20%20cartoon-series%5Cn%20%20simpsons-episode%5Cn%20%20futurama-episode%5Cn%20%20south-park-episode%5Cn%20%20family-guy-episode%5Cn%20%20netflix-category%5Cn%20%20jeopardy-question%5Cn%20%20sci-fi%5Cn%20%20star-trek-planet%5Cn%20%20star-trek-ship%5Cn%20%20sci-fi-universe%5Cn%20%20sci-fi-race%5Cn%20%20sci-fi-weapon%5Cn%20%20war%20&%20figting%5Cn%20%20battle-cry%5Cn%20%20rifle%5Cn%20%20pistol%5Cn%20%20gun%5Cn%20%20medieval-melee-weapon%5Cn%20%20medieval-ranged-weapon%5Cn%20%20sci-fi-weapon%5Cn%20%20tank%5Cn%20%20bomb%5Cn%20%20magic%20&%20the%20supernatural%5Cn%20%20superpower%5Cn%20%20spell%5Cn%20%20potion%5Cn%20%20fantasy%5Cn%20%20fantasy-race%5Cn%20%20monster-type%5Cn%20%20fantasy-world%5Cn%20%20fantasy-game%5Cn%20%20fantasy-language%5Cn%20%20comics%5Cn%20%20webcomic%5Cn%20%20comic-panel%5Cn%20%20manga%5Cn%20%20manga-magazine%5Cn%20%20the%20internet%5Cn%20%20website%5Cn%20%20youtube-thumbnail%5Cn%20%20youtube-video%5Cn%20%20youtuber%5Cn%20%20favicon%5Cn%20%20subreddit%5Cn%20%20social-network%5Cn%20%20instagram-user%5Cn%20%20instagram-username%5Cn%20%20meme%5Cn%20%20music%5Cn%20%20musical-instrument%5Cn%20%20guitar-chord%5Cn%20%20piano-chord%5Cn%20%20pop-star%5Cn%20%20rock-star%5Cn%20%20country-singer%5Cn%20%20rapper%5Cn%20%20band%5Cn%20%20rapper-name%5Cn%20%20band-name%5Cn%20%20music-album%5Cn%20%20music-video%5Cn%20%20song%5Cn%20%20country-song%5Cn%20%20rock-song%5Cn%20%20dubstep-song%5Cn%20%20edm-song%5Cn%20%20metal-song%5Cn%20%20hiphop-song%5Cn%20%20soundcloud-track%5Cn%20%20music-genre%5Cn%20%20dance%5Cn%20%20traditional-dance-style%5Cn%20%20dance-genre%5Cn%20%20dance-move%5Cn%20%20hiphop-dance-move%5Cn%20%20tango-dance-move%5Cn%20%20games%5Cn%20%20rock-paper-scissors%5Cn%20%20playing-card%5Cn%20%20playing-card-short%5Cn%20%20pictionary-word%5Cn%20%20charades-word%5Cn%20%20video-game%5Cn%20%20sega-game%5Cn%20%20gameboy-color-game%5Cn%20%20atari-game%5Cn%20%20ps1-game%5Cn%20%20ps2-game%5Cn%20%20ps3-game%5Cn%20%20n64-game%5Cn%20%20wii-game%5Cn%20%20xbox-game%5Cn%20%20xbox-360-game%5Cn%20%20jeopardy-question%5Cn%20%20wrestling-move%5Cn%20%20sports%5Cn%20%20sport%5Cn%20%20olympic-event%5Cn%20%20nba-team%5Cn%20%20nfl-team%5Cn%20%20mlb-team%5Cn%20%20nhl-team%5Cn%20%20ncaa-football-team%5Cn%20%20ncaa-basketball-team%5Cn%20%20premier-league-team%5Cn%20%20mls-team%5Cn%20%20wwe-wrestler%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn//%20Tips:%5Cn//%20%20-%20Highlight%20multiple%20lines%20and%20press%20Tab%20or%20Shift+Tab%20to%20indent%20and%20un-indent%20them%20all%20an%20once%5Cn//%20%20-%20You%20can%20change%20the%20URL%20of%20your%20generator%20by%20clicking%20the%20%5C%22settings%5C%22%20button%20in%20the%20top-right%5Cn//%20%20-%20Use%20this%20template%20if%20you%20want%20your%20generator%20to%20be%20vertically%20centered%20on%20the%20page:%20%20perchance.org/centered-minimal#edit%5Cn//%20%20-%20Add%20background%20images,%20fonts,%20and%20other%20stuff%20with%20plugins:%20perchance.org/plugins%5Cn//%20%20-%20Here%20are%20some%20templates%20that%20you%20can%20use%20to%20create%20nice-looking%20generators%20without%20learning%20HTML%20and%20CSS:%20%20perchance.org/templates%5Cn//%20%20-%20Use%20the%20%5C%22layout%20maker%5C%22%20plugin%20to%20create%20complex%20layouts%20without%20learning%20how%20to%20code:%20%20perchance.org/layout-maker-plugin%5Cn//%20%20-%20Here%20are%20some%20generators%20you%20might%20like%20to%20import:%20%20perchance.org/useful-generators%5Cn//%20%20-%20Read%20this%20page%20after%20reading%20the%20tutorial:%20%20perchance.org/examples%5Cn//%20%20-%20There's%20a%20%5C%22wrap%5C%22%20button%20in%20the%20top-right%20if%20your%20lines%20are%20really%20long.%20If%20you%20add%20%20%20$output=%5Bthis.joinItems(%5C%22%20%5C%22)%5D%20%20%20as%20the%20first%20item%20in%20your%20list,%20then%20writing%20%5ByourListName%5D%20will%20magically%20output%20all%20of%20the%20items%20joined%20together,%20rather%20than%20a%20random%20item%20from%20the%20%5C%22yourListName%5C%22%20list.%5Cn//%20%20-%20Ask%20our%20friendly%20community%20members%20if%20you%20need%20help:%20%20reddit.com/r/perchance%5Cn//%20%5C%5C(%20%EF%BE%9F%E3%83%AE%EF%BE%9F)/%5Cn%5Cn%5Cn%5Cn%5Cn%22,%22outputTemplate%22:%22%20%5Bremember(root,%20%5C%22outgen%5C%22)%5D%5Cn%3Ch1%3E%5Btitle%5D%3C/h1%3E%5Cn%3Chr%3E%5Cn%3Cp%20style=%5C%22margin:1em%20auto;%20padding:0%201em;%20max-width:700px;%5C%22%3E%5Boutput%5D%3C/p%3E%5Cn%5Cn%3Cp%3E%3Chr%3E%5Cn%3Cbutton%20onclick=%5C%22update()%5C%22%3Egenerate%3C/button%3E%5Cn%20%20%3Cinput%20oninput=%5C%22numItems=Number(this.value)%5C%22%20placeholder=%5C%22How%20many?%5C%22%20style=%5C%22width:120px;%20text-align:center;%5C%22/%3E%5Cn%5Cn%3C!--%20Learn%20HTML%20here:%20%20%20https://www.khanacademy.org/computing/computer-programming/html-css%20%20%20%20--%3E%5Cn%22,%22imports%22:%5B%22generators%22,%22goto-plugin%22,%22remember-plugin%22%5D,%22canLink%22:false,%22isPrivate%22:false%7D</script>
+        <script id="imported-generators" type="notjs">%5B%7B%22modelText%22:%22pride%20=%20%7Bimport:pride-plugin%7D%5Cn%5Cn//%20Every%20page%20on%20perchance%20is%20a%20%5C%22generator%5C%22,%20even%20this%20one!%5Cn//%20But%20since%20there's%20no%20need%20for%20random%20stuff%20on%20this%20page%5Cn//%20(it's%20just%20a%20list%20of%20recently%20updated%20generators),%20all%5Cn//%20the%20code%20for%20this%20page%20is%20in%20the%20HTML%20panel%20(the%5Cn//%20bottom-right%20text%20editor).%5Cn%22,%22imports%22:%5B%22pride-plugin%22%5D,%22name%22:%22generators%22%7D,%7B%22modelText%22:%22$output(place,%20anchor)%20=%3E%5Cn%5Ctif(!window.alreadyAddedDefaultGotoPluginCSS_94629743)%20addDefaultPluginCSS();%5Cn%5Ctlet%20key%20=%20%5C%22taplugin%5C%22+((Math.random()+%5C%22%5C%22+Math.random()).replace(/%5C%5C./g,%5C%22%5C%22));%5Cn%5Ctwindow%5Bkey%5D%20=%20place;%5Cn%5Ctreturn%20%60%3Cspan%20class='goto-plugin'%20onclick='window.$%7Bkey%7D.visited%20=%20true;%20this.parentNode.innerHTML%20=%20window.$%7Bkey%7D;'%3E$%7Banchor%7D%3C/span%3E%60;%5Cn%5Ct%5Ct%5CnaddDefaultPluginCSS()%20=%3E%5Cn%5Ctlet%20style%20=%20document.createElement('style');%20%5Cn%5Ctstyle.type%20=%20'text/css';%5Cn%5Ctstyle.innerHTML%20=%20%60.goto-plugin%20%7B%20font-weight:bold;%20cursor:pointer;%20opacity:0.9;%20text-decoration:underline;%20%7D%20.goto-plugin:hover%20%7B%20opacity:1;%20%7D%60;%5Cn%5Ctdocument.head.appendChild(style);%5Cn%5Ctwindow.alreadyAddedDefaultGotoPluginCSS_94629743%20=%20true;%22,%22imports%22:%5B%5D,%22name%22:%22goto-plugin%22%7D,%7B%22modelText%22:%22$output(callerRoot,%20command)%20=%3E%5Cn%20%20if(!callerRoot%20%7C%7C%20!command)%20return%20%5C%22(error:%20you%20didn't%20input%20root%20and/or%20variable%20names%20to%20the%20remember%20plugin)%5C%22;%5Cn%20%20%5Cn%20%20//%20To%20prevent%20conflict%20with%20other%20generators:%5Cn%20%20let%20prefix%20=%20generatorName+%5C%22__rememberPlugin__variable__%5C%22;%20%5Cn%20%20%5Cn%20%20if(command%20===%20%5C%22@forget%5C%22)%20%7B%5Cn%20%20%5Cn%20%20%5Cn%20%20%20%20clearInterval(window.__rememberPluginSaveInterval7645665);%5Cn%20%20%20%20for(let%20key%20in%20localStorage)%20%7B%5Cn%20%20%20%20%20%20if(key.startsWith(prefix))%20delete%20localStorage%5Bkey%5D;%5Cn%20%20%20%20%7D%5Cn%20%20%20%20window.location.reload();%5Cn%20%20%20%20return;%5Cn%20%20%20%20%5Cn%20%20%20%20%5Cn%20%20%7D%20else%20%7B%5Cn%20%20%5Cn%20%20%5Cn%20%20%20%20let%20variables%20=%20command.split(%5C%22,%5C%22).map(v%20=%3E%20v.trim());%5Cn%20%20%20%20%5Cn%20%20%20%20//%20Deal%20with%20the%20@input%20option%20stuff:%5Cn%20%20%20%20if(variables.includes(%5C%22@inputs%5C%22))%20%7B%5Cn%20%20%20%20%20%20variables%20=%20variables.filter(v%20=%3E%20v%20!==%20%5C%22@inputs%5C%22);%5Cn%20%20%5Cn%20%20%20%20%20%20if(!window.___alreadyAddedRememberUserInputsHandler23942397)%20%7B%5Cn%20%20%20%20%20%20%20%20window.___alreadyAddedRememberUserInputsHandler23942397%20=%20true;%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20//%20We%20need%20to%20set%20a%20timeout%20because%20otherwise%20these%20triggers%20can%20cause%20the%20handlers%20to%20run%20in%20the%20middle%20of%20the%5Cn%20%20%20%20%20%20%20%20//%20initial%20page%20update(),%20which%20messes%20with%20stuff,%20because%20the%20handlers%20can%20themselves%20call%20update().%20You%5Cn%20%20%20%20%20%20%20%20//%20should%20think%20of%20it%20like%20we're%20just%20emulating%20what%20the%20user%20would%20do%20if%20they%20themselves%20remembered%20the%5Cn%20%20%20%20%20%20%20%20//%20data%20and%20manually%20entered%20it%20in%20after%20the%20page%20load.%5Cn%20%20%20%20%20%20%20%20//%20Note%20that%20this%20is%20for%20input%20fields%20only%20-%20the%20variables%20are%20loaded%20instantly%20(see%20the%20code%20closer%20to%20the%20bottom%20of%20this%20function)%5Cn%20%20%20%20%20%20%20%20setTimeout(()%20=%3E%20%7B%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%20%20let%20els%20=%20document.querySelectorAll('input,%20select,%20textarea');%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20//%20load%20data%20from%20localStorage%20into%20input%20forms:%5Cn%20%20%20%20%20%20%20%20%20%20for(let%20el%20of%20els)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20let%20data%20=%20localStorage.getItem(%20prefix%20+%20%5C%22_input_forms_%5C%22%20+%20getCssPath(el)%20);%5Cn%20%20%20%20%20%20%20%20%20%20%20%20if(data)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20el.value%20=%20data;%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Trigger%20change%20and%20input%20events%20in%20case%20the%20person%20using%20this%20plugin%20has%20input/change%20handlers%20on%20their%20inputs,%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20like%20%3Cinput%20oninput=%5C%22...%5C%22%3E%20or%20%3Cselect%20onchange=%5C%22...%5C%22%3E.%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Remember,%20we're%20really%20just%20trying%20to%20%5C%22emulate%5C%22%20the%20user%20changing%20typing/selecting%20the%20inputs%20after%20loading%20the%20page.%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20triggerEvent(el,%20%5C%22change%5C%22);%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20triggerEvent(el,%20%5C%22input%5C%22);%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%7D%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20//%20attach%20listeners%20so%20that%20when%20user%20inputs%20text%20into%20forms,%20the%20text%20gets%20saved%20to%20localstorage%5Cn%20%20%20%20%20%20%20%20%20%20//%20we%20do%20this%20a%20little%20while%20after%20loading%20the%20data%20so%20it%20doesn't%20get%20unnecessarily%20run%20due%20to%20the%20above%20triggers%5Cn%20%20%20%20%20%20%20%20%20%20setTimeout(()%20=%3E%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20for(let%20el%20of%20els)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20el.addEventListener('input',%20function()%20%7B%20localStorage.setItem(%20prefix%20+%20%5C%22_input_forms_%5C%22%20+%20getCssPath(this),%20this.value);%20%7D%20);%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20el.addEventListener('change',%20function()%20%7B%20localStorage.setItem(%20prefix%20+%20%5C%22_input_forms_%5C%22%20+%20getCssPath(this),%20this.value);%20%7D%20);%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%7D,%20400);%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%7D,%20200);%5Cn%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%5Cn%20%20%20%20%7D%5Cn%20%20%20%20%5Cn%20%20%20%20//%20Periodically%20save%20variables%20to%20localStorage:%5Cn%20%20%20%20clearInterval(window.__rememberPluginSaveInterval7645665);%5Cn%20%20%20%20window.__rememberPluginSaveInterval7645665%20=%20setInterval(()%20=%3E%20%7B%5Cn%20%20%20%20%20%20for(let%20v%20of%20variables)%20%7B%5Cn%20%20%20%20%20%20%20%20if(callerRoot%5Bv%5D%20!==%20undefined)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20let%20value%20=%20callerRoot%5Bv%5D;%5Cn%20%20%20%20%20%20%20%20%20%20if(Array.isArray(value.getPropertyNames)%20&&%20value.getLength%20!==%20undefined)%20value%20=%20%60%5BERROR:%20Looks%20like%20you're%20trying%20to%20save%20a%20Perchance%20list%20called%20%5C%22$%7Bv%7D%5C%22%20using%20the%20remember-plugin?%20Currently%20this%20plugin%20only%20supports%20remembering%20variables.%5D%60;%20//%20the%20brackets%20are%20just%20a%20hacky%20way%20to%20trigger%20the%20red%20error%20box%20and%20show%20this%20text.%20%5Cn%20%20%20%20%20%20%20%20%20%20//%20if(Array.isArray(value.getPropertyNames)%20&&%20value.getLength%20!==%20undefined)%20%7B%20//%20hackily%20detect%20if%20it's%20a%20Perchance%20node%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20//%20if%20it's%20all%20properties,%20then%20save%20it%20as%20JSON,%20otherwise%20toString%20it%20(we%20can't%20persist%20a%20perchance%20list/node).%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20if(value.getPropertyNames.length%20%3E%200%20&&%20value.getLength%20===%200)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%20%20let%20newValue%20=%20%7B%7D;%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%20%20for(let%20name%20of%20value.getPropertyNames)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%20%20%20%20newValue%5Bname%5D%20=%20value%5Bname%5D;%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%20%20value%20=%20newValue;%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%7D%20else%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%20%20value%20=%20value.toString();%20//%20it's%20a%20node/list,%20so%20we%20need%20to%20toString%20it%20to%20persist%20it%20(otherwise%20JSON.stringify%20will%20give%20us%20%5C%22%5Bobject%20Object%5D%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20//%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20//%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20localStorage%5Bprefix+v%5D%20=%20JSON.stringify(value);%5Cn%20%20%20%20%20%20%20%20%7D%20else%20if(window%5Bv%5D%20!==%20undefined)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20let%20value%20=%20window%5Bv%5D;%5Cn%20%20%20%20%20%20%20%20%20%20if(Array.isArray(value.getPropertyNames)%20&&%20value.getLength%20!==%20undefined)%20value%20=%20%60%5BERROR:%20Looks%20like%20you're%20trying%20to%20save%20a%20Perchance%20list%20called%20%5C%22$%7Bv%7D%5C%22%20using%20the%20remember-plugin?%20Currently%20this%20plugin%20only%20supports%20remembering%20variables.%5D%60;%20//%20the%20brackets%20are%20just%20a%20hacky%20way%20to%20trigger%20the%20red%20error%20box%20and%20show%20this%20text.%20%5Cn%20%20%20%20%20%20%20%20%20%20localStorage%5Bprefix+v%5D%20=%20JSON.stringify(value);%5Cn%20%20%20%20%20%20%20%20%7D%20else%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20delete%20localStorage%5Bprefix+v%5D;%5Cn%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%7D,%20500);%5Cn%20%20%20%20//%20Load%20variables:%5Cn%20%20%20%20if(!window.__rememberPluginAlreadyLoadedVariables34394539)%20%7B%5Cn%20%20%20%20%20%20for(let%20v%20of%20variables)%20%7B%5Cn%20%20%20%20%20%20%20%20if(localStorage%5Bprefix+v%5D%20!==%20undefined)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20callerRoot%5Bv%5D%20=%20JSON.parse(localStorage%5Bprefix+v%5D);%5Cn%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20window.__rememberPluginAlreadyLoadedVariables34394539%20=%20true;%5Cn%20%20%20%20%7D%5Cn%20%20%20%20%5Cn%20%20%20%20%5Cn%20%20%7D%5Cn%20%20%5Cn%20%20return%20%5C%22%5C%22;%5Cn%20%20%5Cn%5Cn%5CntriggerEvent(el,%20type)%20=%3E%5Cn%20%20if%20(document.createEvent)%20%7B%5Cn%20%20%20%20let%20event%20=%20document.createEvent(%5C%22HTMLEvents%5C%22);%5Cn%20%20%20%20event.initEvent(type,%20true,%20true);%5Cn%20%20%20%20el.dispatchEvent(event);%5Cn%20%20%7D%20else%20%7B%5Cn%20%20%20%20let%20event%20=%20document.createEventObject();%5Cn%20%20%20%20el.fireEvent('on'%20+%20type,%20event);%5Cn%20%20%7D%5Cn%5Cn%5CngetCssPath(el)%20=%3E%5Cn%20%20if(!(el%20instanceof%20Element))%20%7B%5Cn%20%20%20%20return;%5Cn%20%20%7D%5Cn%20%20let%20path%20=%20%5B%5D;%5Cn%20%20while(el.nodeType%20===%20Node.ELEMENT_NODE)%20%7B%5Cn%20%20%20%20let%20selector%20=%20el.nodeName.toLowerCase();%5Cn%20%20%20%20if(el.id)%20%7B%5Cn%20%20%20%20%20%20selector%20+=%20'#'%20+%20el.id;%5Cn%20%20%20%20%20%20path.unshift(selector);%5Cn%20%20%20%20%20%20break;%5Cn%20%20%20%20%7D%20else%20%7B%5Cn%20%20%20%20%20%20let%20sib%20=%20el,%20nth%20=%201;%5Cn%20%20%20%20%20%20while(sib%20=%20sib.previousElementSibling)%20%7B%5Cn%20%20%20%20%20%20%20%20if%20(sib.nodeName.toLowerCase()%20==%20selector)%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20nth++;%5Cn%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20if(nth%20!=%201)%20%7B%5Cn%20%20%20%20%20%20%20%20selector%20+=%20%5C%22:nth-of-type(%5C%22+nth+%5C%22)%5C%22;%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%7D%5Cn%20%20%20%20path.unshift(selector);%5Cn%20%20%20%20el%20=%20el.parentNode;%5Cn%20%20%7D%5Cn%20%20return%20path.join(%5C%22%20%3E%20%5C%22);%5Cn%22,%22imports%22:%5B%5D,%22name%22:%22remember-plugin%22%7D,%7B%22modelText%22:%22$output(size,%20forceShow)%20=%3E%5Cn%20%20if(size%20===%20undefined)%20size%20=%201;%20%5Cn%5Ctif(typeof%20size%20!==%20%5C%22number%5C%22)%20return%20%5C%22You%20gave%20this%20plugin%20something%20other%20than%20a%20number?%5C%22;%5Cn%5Ctif(forceShow%20%7C%7C%20new%20Date().getUTCMonth()%20===%205)%20return%20%60%3Cimg%20class=%5C%22pride-plugin-image%5C%22%20style=%5C%22height:$%7Bsize*1.4%7Drem%5C%22%20src=%5C%22data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACslBMVEUAAAD/AAr/ADD/ADD/AA75ABL/AA3/AA36ABH/AA3/AA7/AA7/AA7/AA7/AA7/AA7/AAz/AA3/AA7/AA7/AA3/AA7/AA6IAIKIAIKIAIKIAIKHAIKHAIKGAIKIAIKIAIKIAICIAIKIAIKIAIKbAHGGAIOHAISWAG+IAIKFAH+WAJSWAJT/AA3/AA7/AA7/AA7/AA7/AA7/AA7+AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7+AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA3/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/AA7/Bg3/Bg2BB4SIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKJAIKHAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIL/AA7/AA7/AA7/AA7/AA7/AA7/AA7/Bg3/QQP/QQP/UQD/UAD/TgD9iQ760yD60iD60iD80yDfyiQulzoRjj4Tjz4Tjz4Tjz0mcHU2V6E1WKA0WaBESJtESJuBB4SIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIKIAIL///+qtFapAAAAvXRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkiP1JZWloBIGy24fT7/v7+4bZtIQERcNj9/dhyEimx+/uyKjLLzDIjxsYjCaGgCVb29VUQurkQTPHxTJWVzc3s7Pr6////+vrs683NlZRM8fFLELm5EFX19VQJoKAJI8bGIzHLyzEpsfv7sikRcNf9/dhyEgEgbLXh9Pv+/v779OG2bSABCCI/UllaWllSPyLK/1dpAAAAAWJLR0TlWGULvwAAAAd0SU1FB+MDBhQZFdM9oN8AAAGiSURBVGje7do9a5RBFIbhc585GxGx8hcETKGgqQxBLFRQ/A3RwlokoASinVUIWPhZWKUTLERrMdiIbarArlWqYGsR1MLdYyGL9rpzRJ672fJiZuejeMdMKaWUUtUx/eUkAMxMyszMHE7ydzgWmTZTeADw/vsUHnAOuGNGznZ209gE3vHNDLPDnIfb2eu/fQDbHBh2lIusZvZbVu0x23xuduRSuznpuZ5zaWdh72s7drndGHfeSss7C5/Cg96ujQPnOtcKjo/nREB2dwk8rvZ3LVfcfVww0zZ2dypgPDwq5PRwrxkxH0qm2jJKBmxG1AzYrGjAggULFvwHlR2Zgv9/WPtYsGDBOjIF63YSLFiwbifBgrWdBAsWrGvxr8JFH7za3BkqelY1Yg8vgr1oWVd9uHZ336qAtyJqNnLQRsu7p7q7L9rT8KD1fhgRgbeD0dnh6a6PjGzwsj3cd/Mn7dVcT/fQ68GjMMzmuQVXurlv4P5kzzCz46wBF7rM8ltgg4/Tx4Lz93o8Fmw/hfWR2a/nkSfYnDXswJe7k6EppZRS6h/pBzoNVGWAoj5vAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTAzLTA2VDIwOjI1OjA4KzAwOjAwSBEKDQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wMy0wNlQyMDoyNTowOCswMDowMDlMsrEAAAAASUVORK5CYII=%5C%22/%3E%60;%5Cn%5Ctelse%20return%20%5C%22%5C%22;%22,%22imports%22:%5B%5D,%22name%22:%22pride-plugin%22%7D%5D</script>
+        <script id="imported-generator-names" type="notjs">%5B%22generators%22,%22goto-plugin%22,%22remember-plugin%22,%22pride-plugin%22%5D</script>
+
+
+        <script>
+          window.generatorData = JSON.parse( decodeURI( document.querySelector("#preloaded-generator-data").innerText ) );
+          window.generatorCanLinkWithRelFollow = generatorData.canLink; // make it global so the iframe-based description update has access to it.
+
+          // For crawlers that don't have es6 support and thus can't execute the iframe:
+          if(!window.canExecuteModernJavascript) {
+            window.addEventListener("DOMContentLoaded", function() {
+              var data = window.generatorData;
+
+              window.document.querySelector("#generator-description").innerHTML = DOMPurify.sanitize(data.outputTemplate, {ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'p', 'div', 'pre', 'button', 'i', 'b', 'a', 'ul', 'li', 'br', 'ol', 'hr', 'span'], ALLOWED_ATTR: ['href']});
+              var pre = document.createElement('pre');
+              pre.innerText = data.modelText.slice(0, 10000);
+              window.document.querySelector("#generator-description").appendChild(pre);
+              
+              window.document.querySelector("#generator-description").style.cssText = "";
+
+              var h1 = window.document.querySelector("#generator-description h1");
+              if(!h1) h1 = window.document.querySelector("#generator-description h2");
+              if(h1) {
+                var h1Text = h1.textContent;
+                if(h1Text !== "Your Generator's Title" && h1Text !== "Minimal Example" && h1Text.indexOf("[") === -1 && h1Text.indexOf("]") === -1) {
+                  document.title = h1Text+" ― Perchance" + (h1Text.toLowerCase().includes("gener") ? "" : " Generator");
+                }
+              } else {
+                let title = window.location.pathname.slice(1).split("-").filter(function(a){return a;}).map(function(word){return word[0].toUpperCase()+word.slice(1); }).join(" ");
+                document.title = title+" ― Perchance" + (title.toLowerCase().includes("gener") ? "" : " Generator");
+              }
+
+              if(!window.generatorCanLinkWithRelFollow) {
+                var links = window.document.querySelectorAll("#generator-description a");
+                for(var i = 0; i < links.length; i++) {
+                  links[i].rel = "nofollow";
+                }
+              }
+            });
+          }
+        </script>
+
+        <script data-src="/tags/all-tags-compiled-BUNDLE.js?v=72dwgefhf" type="riot/tag"></script>
+
+        <!-- CODEMIRROR (stylesheets MUST come before javascript init) -->
+        <link rel="stylesheet" href="/lib/codemirror/codemirror.css?v=3452338345">
+        <link rel="stylesheet" href="/lib/codemirror/foldgutter.css?v=3453423554">
+        <script src="/lib/codemirror/js/codemirror-5.51.0-BUNDLE.js?v=44s853453d4936"></script>
+
+        <script src="/lib/perchance/codeMirrorHighlighter.js?v=d24s749"></script>
+
+        <!-- LIBS -->
+        <script src="/lib/splitjs/split.min.js"></script>
+        <script src="/lib/axios-0.15.3.min.js"></script>
+        <script src="/lib/Store.js"></script>
+        <script src="/lib/purify.min.js"></script>
+        <script async src="/lib/diff_match_patch.js"></script>
+        <!-- <script src="lib/diff.min.js"></script> -->
+
+
+        <!-- CSS LOADING SPINNER -->
+        <style>
+          .ldspmzjfhueifssge-ring {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+          }
+          .ldspmzjfhueifssge-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border: 6px solid #444;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #444 transparent transparent transparent;
+          }
+          .ldspmzjfhueifssge-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+          }
+          .ldspmzjfhueifssge-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+          }
+          .ldspmzjfhueifssge-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+          }
+          @keyframes lds-ring {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        </style>
+        <div id="initialPageLoadSpinner" style="z-index:2000; position: absolute; top: 40px; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center;"><div class="ldspmzjfhueifssge-ring"><div></div><div></div><div></div><div></div></div></div>
+        <script>if(window.location.hash.includes("edit") || window.location.hash.includes("debugFreeze")) initialPageLoadSpinner.style.display = "none";</script>
+
+        <app></app>
+
+        <!-- <script src="/lib/riotjs/riot-3.0.5.min.js"></script> -->
+        <script src="/lib/riotjs/riot+compiler-3.0.5.min.js"></script>
+        <!--<script src="lib/riotjs/riot+compiler-3.13.2.min.js"></script>-->
+        <script>
+        riot.mount('app', {
+          generator: window.generatorData,
+          dependencies: JSON.parse( decodeURI( document.querySelector("#imported-generators").innerText ) ),
+        });
+        </script>
+        
+        <link rel="stylesheet" href="/lib/normalize.css">
+        <link rel="stylesheet" href="/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Cousine&display=swap" rel="stylesheet">
+        
+
+        <script>
+          // OLD GA CODE:
+          /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-36798824-24', 'auto');
+          
+          ga('send', 'pageview');
+          try {
+            setTimeout( function() { // wait for riotjs to render everything (we're not in any hurry)
+              document.querySelector("#verify-account-button").addEventListener('click', function() {
+                ga('send', 'event', 'general', 'signup');  // yay!
+              });
+            }, 20*1000);
+          } catch(e) {}*/
+        </script>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJWJRNESS5"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YJWJRNESS5');
+          
+          try {
+            setTimeout( function() { // wait for riotjs to render everything (we're not in any hurry)
+              document.querySelector("#verify-account-button").addEventListener('click', function() {
+                gtag("event", "signup", {});
+              });
+            }, 20*1000);
+          } catch(e) { console.error(e); }
+        </script>
+
+
+        <script>
+        window.downloadTextFile = (text, name) => {
+          const a = document.createElement('a');
+          const type = name.split(".").pop();
+          a.href = URL.createObjectURL( new Blob([text], { type:`text/${type === "txt" ? "plain" : type}` }) );
+          a.download = name;
+          a.click();
+        }
+        (async function() {
+          while(!window.diff_match_patch) {
+            await new Promise(r => setTimeout(r, 500));
+          }
+          var dmp = new diff_match_patch();
+          window.diffStuff = {}; //patches, modelTextPatches and outputTemplatePatches get added to this object in revisions-modal.tag. It's hacky, but it'll do for now.
+          window.diffStuff.openNewTabWithRevision = function(revisionNumber, generatorName) {
+            let modelText = this._patchesToRevision(this.modelTextPatches, revisionNumber);
+            let outputTemplate = this._patchesToRevision(this.outputTemplatePatches, revisionNumber);
+
+            // we used encodeURI to fix emojis problem (https://github.com/google/diff-match-patch/pull/69#issuecomment-526137211), so we need to decode:
+            modelText = decodeURI(modelText);
+            outputTemplate = decodeURI(outputTemplate);
+
+            let intro = "<<<<< this file contains your perchance lists first, and your HTML code underneath it >>>>>\n\n\n\n";
+            window.downloadTextFile(intro+modelText+("\n".repeat(20))+outputTemplate+("\n".repeat(20)), `${generatorName}-revision-${revisionNumber}.txt`);
+          };
+          window.diffStuff._patchesToRevision = (patches, revisionNumber) => {
+            if(revisionNumber > patches.length-1 || revisionNumber < 0) throw new Error(`revisionNumber ${revisionNumber} doesn't exist. max index of patches array = ${patches.length-1}`);
+            let text = patches[0];
+            if(revisionNumber === 0) return text;
+            for(let n = 1; n < patches.length; n++) {
+              //text = JsDiff.applyPatch(text, patches[n]);
+              text = dmp.patch_apply(dmp.patch_fromText(patches[n]), text)[0];
+              if(text === false) throw new Error("JsDiff says that the patches aren't correct. some sort of corruption or incorrect formatting or mismatch");
+              if(n === revisionNumber) return text;
+            }
+          }
+        })();
+        </script>
+
+
+        <script>
+        // a temporary hack to make sure search engines see links on generators page:
+        if(document.location.pathname === "/generators") {
+          var req = new XMLHttpRequest();
+          req.overrideMimeType("application/json");
+          req.open('GET', "/api/getGeneratorList", true);
+          req.onload  = function() {
+             var result = JSON.parse(req.responseText);
+             var div = document.createElement('div');
+             if(window.canExecuteModernJavascript) {
+               div.style.height = "0px";
+               div.style.overflow = "hidden";
+               div.style.position = "fixed";
+             }
+             div.innerHTML = "Here are the latest generators: "+result.generators.map(function(g){ return "<a href='/"+g.name+"'>"+g.name+"</a>"; }).join(", ")+".";
+             document.body.appendChild(div);
+          };
+          req.send(null);
+        }
+        </script>
+        
+        <script>
+        fetch(`https://perchance.org/api/countView?generatorName=${location.pathname.slice(1)}&isFromEmbed=0`);
+        </script>
+
+        <script>
+          // CloudFlare sometimes has cache purging delays, and these can really mess things up (e.g. make it look like you've lost hours of work).
+          // We check the `age` header of this document, and if it's older than the last save time of this generator, then we load a cache-busted URL
+          // and then remove the added cacheBust string with history.replaceState
+          // We only do this if the user is the owner (as evidenced by having a record of their last save time in localStorage)
+          // TODO: Fix this so it also triggers a cache bust on the iframe embed. This existing code lets the user know that their work is not lost, which is the most important part.
+          (async function() {
+            let savedTime = JSON.parse(localStorage["generatorSavedTimes"] || "{}")[window.generatorData.name];
+            if(!savedTime) return; 
+            let savedTimeSecondsAgo = Math.round( (Date.now() - savedTime) / 1000);
+            let cachedSecondsAgo = await fetch(window.location.href, {method:"head"}).then(r => r.headers.get("age"));
+            if(cachedSecondsAgo === null) return;
+            console.log(`${window.location.href} was cached ${cachedSecondsAgo} seconds ago.`);
+            console.log(`${window.generatorData.name} was saved ${savedTimeSecondsAgo} seconds ago.`);
+            if(cachedSecondsAgo > savedTimeSecondsAgo) { // if cache is older than the last save time (remember, these values are `...Ago`)
+              console.error("Need to bust cache due to CloudFlare being too slow to purge cache.");
+              
+              if(cachedSecondsAgo > savedTimeSecondsAgo+60*3) { // <-- track very slow cache purging for analytics
+                fetch(`/api/slowCachePurgeWarning?generator=${window.generatorData.name}`);
+              }
+
+              let url = new URL(window.location.href);
+              url.searchParams.set("cacheBustDueSlowCachePurgeAfterSave", Math.random().toString().replace(".", ""));
+              window.location.href = url.href;
+            }
+          })();
+          if(location.href.includes("cacheBustDueSlowCachePurgeAfterSave")) {
+            let url = new URL(window.location.href);
+            url.searchParams.delete("cacheBustDueSlowCachePurgeAfterSave");
+            let newPath = url.href.replace("https://perchance.org", "");
+            history.replaceState({}, "", newPath);
+          }
+        </script>
+        
+        <script type="module">
+          if(window.location.hash !== "#edit" && Date.now() < 1676159222750 && window.innerWidth > 1000) { // until ~Feb 14 2023
+            while(!document.querySelector("div.menu-item.new")) await new Promise(r => setTimeout(r, 20));
+            let btnHtml = document.querySelector("div.menu-item.new").outerHTML;
+            btnHtml = btnHtml.replace(/\/minimal#edit/g, "/text-to-image-plugin"); // "https://discord.gg/43qAQEVV9a"
+            btnHtml = btnHtml.replace(/>new</g, ">ai plugin<");
+            btnHtml = btnHtml.replace(/menu-item new/g, "menu-item promo");
+            btnHtml = btnHtml.replace(/⊕︎/g, "🆕");
+            let ctn = document.createElement("div");
+            ctn.innerHTML = btnHtml;
+            let btn = ctn.firstElementChild;
+            btn.style.backgroundColor = "#ffd4a4";
+            document.querySelector("div.menu-item.new").after(btn);
+          }
+        </script>
+        
+        
+        <script>
+          (function() {
+            if((localStorage["app-storage"] && localStorage["app-storage"].includes("sessionToken")) || navigator.webdriver) return; // not for logged-in users and screenshot bot
+          
+            let alreadyAddedAdvert = false;
+            window.addEventListener("message", function(e) {
+              let origin = e.origin || e.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+              if(origin !== "https://null.perchance.org") {
+                console.warn("Message has incorrect origin.", e);
+                return;
+              }
+              
+              if(e.data.type === "adPoweredPluginInUse" && !alreadyAddedAdvert && window.location.pathname !== '/text-to-image-plugin') {
+                let adCtn = document.createElement("div");
+                // let maxHeight = window.innerWidth < 600 ? 50 : 90;
+                let maxHeight = 90;
+                adCtn.style.cssText = `position:fixed; bottom:8px; right:8px; left:8px; min-height:50px; max-height:${maxHeight}px; overflow:hidden; text-align:center;`;
+                
+                new ResizeObserver(function() {
+                  document.querySelector("#main").style.bottom = (adCtn.offsetHeight + 8*2)+"px";
+                }).observe(adCtn);
+                
+                adCtn.innerHTML = `<div id="adngin-responsive_banner-0"></div>`;
+                let script = document.createElement("script");
+                script.dataset.cfasync="false";
+                script.async = true;
+                script.src = "https://staging-cdn.snigelweb.com/adengine/perchance.org/loader.js";
+                document.head.appendChild(script);
+                
+                // adCtn.innerHTML = `<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtgAAABaAQMAAAC4+rO8AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRFXrP/I7IslgAAAB9JREFUeJztwYEAAAAAw6D5U1/gCFUBAAAAAAAAAHwDIFgAAVR0zeEAAAAASUVORK5CYII="/>`;
+                
+                document.body.appendChild(adCtn);
+                alreadyAddedAdvert = true;
+              }
+            });
+          })();
+        </script>
+
+        <script>
+          setTimeout(function() {
+            // Make the screen "cleaner" for the screenshot bot:
+            if(navigator.webdriver) {
+              document.querySelectorAll("menu-bar .menu-item").forEach(el => el.style.opacity=0);
+              document.querySelector("editor #main").style.top = "8px";
+            }
+          }, 100);
+        </script>
+        
+        
+        <!-- use invisible `touch-action:none` divs to prevent accidental "drag down to refresh" behavior when scrolling up iframe (dragging finger down) but finger lands on the edge (outside frame) -->
+        <div style="width: 19px;height: 100%;position: fixed;right: -10px;top: 35px;bottom: 0px;/* background: blue; */touch-action: none; z-index:9999999;"></div>
+        <div style="width: 19px;height: 100%;position: fixed;left: -10px;top: 35px;bottom: 0px;/* background: blue; */touch-action: none; z-index:9999999;"></div>
+
+    </body>
+</html>
