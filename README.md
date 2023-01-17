@@ -1,21 +1,22 @@
-# 9898-MTG
-Custom MTG &amp; The Box Cards
+## Urza.ai deck maker (for cockatrice)
 
-• Magic: the Gathering related. Custom cards, sets, utilities, etc.
-• The Box [https://www.thebox.games] is a game on Tabletop Simulator from Steam Games [https://store.steampowered.com/app/286160/Tabletop_Simulator/]
-<a href="https://www.thebox.games">The Box</a>
-<a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop Simulator</a>
+### Have a great time with friends by allowing an ai to completely generate an MTG. ITS PRETYTY EPICEK
 
-MTGA Magic Arena: adamf9898#33927
-TTS: adamf9898 or 9898-MTG
-Discord User: adamf9898#8483
-Discord Server: 9898-MTG https://discord.gg/7dg9zBSTcB
-Facebook: https://www.facebook.com/gaming/9898MTG & https://www.facebook.com/9898MTG
-Reddit: 
-TappedOut:
-imgur:
-Perchance: 
+## Program
 
-The language that **tabletop** simulator uses is called **LUA**.
+Simple web scraper that spams urza.ai until all cards name in "names.txt" are combined into a compatible xml file.
 
-Does anyone **know** or could **create** a **converter** that can take a **generator** created from the site **[perchance.org](https://perchance.org)** that can be used **successfully** in **LUA scripting on objects in tabletop simulator** ?
+1. Add all names to a ./names.txt file (didnt care to handle empty space)
+2. run node urza_scraper.js [OUTPUT-FILE-NAME] [OUTPUT-SET-NAME]
+3. Add the .xml file to the custom databases folder of cockatrice
+4. PROFIT!?!!!???????
+
+#### We do a little [some] webscraping
+
+## Todo
+
+- Append to xml files
+
+- Allow for specific options
+
+- HOW DO YOU MAKE WEBSCRAPERS NOT BECOME OBSOLETE
